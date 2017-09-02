@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <BirthTable>
-	<element index="b1" name="신정" date="2018.1.1.월"/>
-	<element index="b2" name="설날" date="2018.2.16.금"/>
-	<element index="b3" name="삼일절" date="2018.3.1.목"/>
-	<element index="b4" name="어린이날" date="2018.5.5.토"/>
-	<element index="b5" name="석가탄신일" date="2018.5.22.화"/>
-	<element index="b6" name="현충일" date="2018.6.6.수"/>
-	<element index="b7" name="지방선거" date="2018.6.13.수"/>
-	<element index="b8" name="광복절" date="2018.8.15.수"/>
-	<element index="b9" name="추석" date="2018.9.24.월"/>
-	<element index="b10" name="개천절" date="2018.10.3.수"/>
-	<element index="b11" name="한글날" date="2018.10.9.화"/>
-	<element index="b12" name="성탄절" date="2018.12.25.화"/>
+	<element id="b1" name="신정" date="2018.1.1.월"/>
+	<element id="b2" name="설날" date="2018.2.16.금"/>
+	<element id="b3" name="삼일절" date="2018.3.1.목"/>
+	<element id="b4" name="어린이날" date="2018.5.5.토"/>
+	<element id="b5" name="석가탄신일" date="2018.5.22.화"/>
+	<element id="b6" name="현충일" date="2018.6.6.수"/>
+	<element id="b7" name="지방선거" date="2018.6.13.수"/>
+	<element id="b8" name="광복절" date="2018.8.15.수"/>
+	<element id="b9" name="추석" date="2018.9.24.월"/>
+	<element id="b10" name="개천절" date="2018.10.3.수"/>
+	<element id="b11" name="한글날" date="2018.10.9.화"/>
+	<element id="b12" name="성탄절" date="2018.12.25.화"/>
 </BirthTable>

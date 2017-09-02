@@ -13,21 +13,74 @@ namespace Birth
         {
             Birth birth = new Birth();
 
-            birth.SetDataFromCode();
-            //birth.SetDataFromFile();
+            //birth.SetDataFromCode();
+            birth.SetDataFromFile();
             //birth.SetDataFromDB();
 
-            Console.Write("해당일은 무슨 기념일일까요? 기념일의 이름을 맞춰보세요.");
-            Console.Write("정답이 궁금하면 'list'를 입력하세요.");
-            //snum = Console.ReadLine();
-        }
+            string input = string.Empty;
+            int curIndex = 0;
+            if (birth.birthDic.Count <= 0)
+            {
+                Console.WriteLine("데이터가 잘못되었습니다.");
+                return;
+            }
 
+            Console.WriteLine("==== 기념일 맞추기 퀴즈 =====");
+
+            do
+            {
+                Console.WriteLine("");
+                Console.WriteLine("정답이 궁금하면 'list'를 입력하세요.");
+                Console.WriteLine("그만하려면 'exit'를 입력하세요.");
+                Console.WriteLine("{0}의 기념일 이름은 무엇일까요?", birth.birthDic.ElementAt(curIndex).Value.birth);
+
+                input = Console.ReadLine();
+
+                // 정/오답 처리
+                if (input == birth.birthDic.ElementAt(curIndex).Value.name)
+                {
+                    birth.successIndices.Add(curIndex);
+                    Console.WriteLine("정답입니다!!");
+                }
+                else if (input == "list")
+                {
+                    foreach(KeyValuePair<string, BirthInfo> kvp in birth.birthDic)
+                    {
+                        Console.WriteLine("{0} : {1}", kvp.Value.birth, kvp.Value.name);
+                    }
+                }
+                else if (input == "exit")
+                {
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("아쉽지만 틀렸습니다.");
+                }
+
+                // 모두 맞추었는지 검사
+                if (birth.successIndices.Count == birth.birthDic.Count)
+                {
+                    Console.WriteLine("\n모두 맞추셨습니다. 축하합니다^^");
+                    break;
+                }
+
+                // 다음 문제로 넘어가기
+                curIndex = birth.GetNextIndex(curIndex);
+                if (curIndex == birth.birthDic.Count)
+                    curIndex = 0;
+
+            } while (input != "exit");
+
+            Console.WriteLine("\nGood bye.");
+        }
         
     }
 
     public class Birth
     {
-        Dictionary<string, BirthInfo> birthDic = new Dictionary<string, BirthInfo>();
+        public Dictionary<string, BirthInfo> birthDic = new Dictionary<string, BirthInfo>();
+        public List<int> successIndices = new List<int>();
 
         public void SetDataFromCode()
         {
@@ -44,28 +97,42 @@ namespace Birth
             BirthInfo b11 = new BirthInfo("한글날", "2018.10.9.화");
             BirthInfo b12 = new BirthInfo("성탄절", "2018.12.25.화");
 
-            birthDic.Add(b1.ToString(), b1);
-            birthDic.Add(b2.ToString(), b2);
-            birthDic.Add(b3.ToString(), b3);
-            birthDic.Add(b4.ToString(), b4);
-            birthDic.Add(b5.ToString(), b5);
-            birthDic.Add(b6.ToString(), b6);
-            birthDic.Add(b7.ToString(), b7);
-            birthDic.Add(b8.ToString(), b8);
-            birthDic.Add(b9.ToString(), b9);
-            birthDic.Add(b10.ToString(), b10);
-            birthDic.Add(b11.ToString(), b11);
-            birthDic.Add(b12.ToString(), b12);
+            birthDic.Add("b1", b1);
+            birthDic.Add("b2", b2);
+            birthDic.Add("b3", b3);
+            birthDic.Add("b4", b4);
+            birthDic.Add("b5", b5);
+            birthDic.Add("b6", b6);
+            birthDic.Add("b7", b7);
+            birthDic.Add("b8", b8);
+            birthDic.Add("b9", b9);
+            birthDic.Add("b10", b10);
+            birthDic.Add("b11", b11);
+            birthDic.Add("b12", b12);
         }
 
         public void SetDataFromFile()
         {
             BirthTable.Instance.Read("../../Table/BirthTable.xml");
+
+            birthDic = BirthTable.birthDic;
         }
 
         public void SetDataFromDB()
         {
 
+        }
+
+        public int GetNextIndex(int curIndex)
+        {
+            for (int i = curIndex + 1; i < successIndices.Count; i++)
+            {
+                if (successIndices.IndexOf(i) != -1)
+                    continue;
+                return i;
+            }
+
+            return curIndex + 1;
         }
     }
 }
