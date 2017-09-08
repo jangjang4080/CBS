@@ -14,8 +14,8 @@ namespace Birth
             Birth birth = new Birth();
 
             //birth.SetDataFromCode();
-            birth.SetDataFromFile();
-            //birth.SetDataFromDB();
+            //birth.SetDataFromFile();
+            birth.SetDataFromDB();
 
             string input = string.Empty;
             int curIndex = 0;
@@ -120,7 +120,10 @@ namespace Birth
 
         public void SetDataFromDB()
         {
+            BirthDB birthDB = new BirthDB();
+            birthDB.Read();
 
+            birthDic = BirthDB.birthDic;
         }
 
         public int GetNextIndex(int curIndex)
