@@ -22,7 +22,9 @@ namespace Birth
 
         public void Read()
         {
-            var client = new MongoClient("mongodb://49.165.232.70:27017");
+            //string ipadress = "mongodb://49.174.172.79:50101";
+            string ipadress = "mongodb://192.168.219.107:50101";
+            var client = new MongoClient(ipadress);
             var db = client.GetDatabase("Birth");
             var birthCollection = db.GetCollection<BirthCollection>("2018");
             var filter = Builders<BirthCollection>.Filter.Empty;
