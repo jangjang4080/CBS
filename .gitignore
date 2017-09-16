@@ -7,6 +7,8 @@
 /Birth/Birth/obj/Debug
 /Birth/Birth/bin/Debug
 /ReadKey/Temp/UnityVS_obj/Debug
+.DS_Store
+Birth_Unity/Library
 Birth_Unity/obj
 Birth_Unity/.vscode/settings.json
 Birth_Unity/Birth_Unity.userprefs
