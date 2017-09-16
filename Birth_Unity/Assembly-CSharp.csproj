@@ -267,11 +267,11 @@
  <Reference Include="DOTween">
  <HintPath>/Work/Lecture/CBS/Birth_Unity/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
  </Reference>
- <Reference Include="DOTween46">
- <HintPath>/Work/Lecture/CBS/Birth_Unity/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
- </Reference>
  <Reference Include="DOTween43">
  <HintPath>/Work/Lecture/CBS/Birth_Unity/Assets/Demigiant/DOTween/DOTween43.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween46">
+ <HintPath>/Work/Lecture/CBS/Birth_Unity/Assets/Demigiant/DOTween/DOTween46.dll</HintPath>
  </Reference>
  <Reference Include="DOTween50">
  <HintPath>/Work/Lecture/CBS/Birth_Unity/Assets/Demigiant/DOTween/DOTween50.dll</HintPath>
