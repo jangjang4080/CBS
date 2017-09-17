@@ -6,8 +6,12 @@ namespace TWICE
 {
 	public class Main : MonoBehaviour 
 	{
+		public string dbIPAdress = "";
+
 		void Start () 
 		{
+			Env.dbIPAdress = dbIPAdress;
+
 			Quiz quiz = GameObject.FindObjectOfType<Quiz>();
 			if (quiz != null)
 			{

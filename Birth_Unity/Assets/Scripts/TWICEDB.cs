@@ -25,9 +25,7 @@ namespace TWICE
         {
             memberDic.Clear();
 
-            //string ipadress = "mongodb://49.174.172.79:50101";
-            string ipadress = "mongodb://192.168.219.107:50101";
-            var client = new MongoClient(ipadress);
+            var client = new MongoClient(Env.dbIPAdress);
             var db = client.GetDatabase("TWICE");
             var collection = db.GetCollection<MemberCollection>("Member");
             var filter = Builders<MemberCollection>.Filter.Empty;

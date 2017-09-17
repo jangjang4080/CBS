@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{6EF3BEC9-9DEF-4BAC-97B5-02EBFEEA08A1}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Birth/BirthDB.cs">
+    <Files>
+      <File FileName="Birth/BirthDB.cs" Line="34" Column="46" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Birth PreferredExecutionTarget="MonoDevelop.Default" />
+  <MultiItemStartupConfigurations />
+</Properties>
